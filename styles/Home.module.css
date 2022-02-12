@@ -1,0 +1,241 @@
+.container {
+  height: 100vh;
+  display: flex;
+  background: rgb(253, 253, 253);
+  flex-direction: column;
+}
+.map {
+  flex: 1;
+}
+.actionItems {
+  flex: 1;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.actionItems::-webkit-scrollbar {
+  width: 0 !important;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0px;
+}
+.box {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.shadow {
+  box-shadow: rgb(66 66 66 / 15%) 0px 3px 6px;
+}
+.loginImg {
+  object-fit: contain;
+  width: 100%;
+}
+.loginTxt {
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.uber {
+  height: 50px;
+}
+.uber1 {
+  height: 20px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+.user {
+  height: 50px;
+  border-radius: 50%;
+  border: solid 3px white;
+  justify-content: flex-end;
+}
+.user:hover {
+  cursor: pointer;
+}
+
+.userName {
+  position: absolute;
+  top: 55%;
+  right: 76px;
+  font-weight: 600;
+}
+.btn {
+  background-color: #f2f3f7;
+  height: 110px;
+  width: 115px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.uberIcon {
+  height: 80px;
+}
+.whereTo {
+  background: #f2f3f7;
+  padding: 8px;
+  margin: 10px;
+  font-size: large;
+}
+/* ///////////// */
+.back {
+  width: 30px;
+  padding: 3px;
+}
+.back1 {
+  background: white;
+  border-radius: 50%;
+  position: fixed;
+  padding: 3px;
+  z-index: 100;
+  width: 30px;
+  margin: 5px;
+  box-shadow: rgba(110, 110, 110, 0.2) 2px 2px 2px;
+}
+.back:hover {
+  cursor: pointer;
+}
+.plus {
+  color: #e8e9eb;
+  font-size: 30px;
+  margin: 5px;
+  margin-top: 18px;
+}
+.star {
+  color: rgb(255, 255, 255);
+  background: rgb(209, 209, 209);
+  font-size: 15px;
+  padding: 4px;
+  border-radius: 50%;
+}
+.storedLocE {
+  font-size: small;
+  color: #f2f3f7;
+  position: absolute;
+  right: 17px;
+}
+.FromTo {
+  background-size: contain;
+  width: 20px;
+  margin-top: 8px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.InputBox {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.Input:focus {
+  background: #e2e3e6;
+  border: none;
+}
+.Signin {
+  width: -webkit-fill-available;
+  background: black;
+  color: rgb(246, 255, 255);
+  margin-top: 8px;
+  border-radius: 3px;
+  padding: 8px 2px;
+  cursor: pointer;
+}
+.ConfirmBtn {
+  width: -webkit-fill-available;
+  background: black;
+  color: rgb(246, 255, 255);
+  border-radius: 3px;
+  padding: 6px 2px;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s;
+}
+.ConfirmBtnDis {
+  width: -webkit-fill-available;
+  background: #d7d8da;
+  color: white;
+  border-radius: 4px;
+  padding: 6px 2px;
+  cursor: pointer;
+  pointer-events: none;
+  border: none;
+  transition: 0.5s;
+}
+.warning {
+  color: #fc4563;
+  display: flex;
+  justify-content: center;
+  font-size: 1px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: 0.5s;
+}
+/* /////////////////// */
+.choose {
+  background: white;
+  padding: 8px 0px;
+  text-align: center;
+  font-family: monospace;
+}
+.ridebox {
+  height: 100%;
+  margin: 5px 0px;
+  background: white;
+  overflow: scroll;
+}
+
+.choosecar {
+  height: 70px;
+  padding: 0px 10px;
+}
+.onecar {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+.choosecartxt {
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+.minsaway {
+  font-size: 0.8rem;
+  margintop: 8px;
+  color: rgb(66, 183, 255);
+}
+.price {
+  padding: 25px 10px;
+  font-family: "Poppins", sans-serif;
+}
+div.mapboxgl-popup-content {
+  border-radius: 7px;
+  padding: 5px 10px;
+}
+
+.instruction {
+  text-align: center;
+  position: absolute;
+  margin: 12px;
+  width: 19%;
+  top: 4px;
+  right: 5px;
+  border: solid seashell;
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: seashell;
+  background-color: rgb(63 177 206 / 75%);
+  font-family: sans-serif;
+}
