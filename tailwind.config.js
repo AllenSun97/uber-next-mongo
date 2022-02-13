@@ -4,7 +4,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: { poppin: ["Poppins", "sans-serif"] },
+    fontFamily: {
+      poppin: ["Poppins", "sans-serif"],
+      yan: ["Yantramanav", "sans-serif"],
+    },
     extend: {
       colors: { "Perf-grey": "#d1d1d1", "star-grey": "#c1c1c5" },
       padding: { star: "5px 6px ", savePlace: "5px 85px" },

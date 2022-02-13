@@ -17,7 +17,7 @@ const stored_loc = ({ locations }) => {
             class="w-8 hover:cursor-pointer"
           />
         </Link>
-        <div class="font-poppin text-base ml-2"> Choose a Place</div>
+        <div class="font-yan text-base ml-2"> Choose a Place</div>
       </div>
 
       <Saved_Place locations={locations} />

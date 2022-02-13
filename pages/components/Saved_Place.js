@@ -17,7 +17,7 @@ const Saved_Place = ({ locations, slice = 10, func = null }) => {
           >
             <a>
               <div
-                class="flex items-center p-[6px] pl-1 hover:cursor-pointer"
+                class="flex items-center p-[6px] pl-2 hover:cursor-pointer"
                 key={location._id}
                 onClick={() => {
                   setPlace(location.address);
@@ -25,10 +25,8 @@ const Saved_Place = ({ locations, slice = 10, func = null }) => {
               >
                 <i class="fas fa-star fill-current text-white bg-star-grey text-xs p-star mx-2 rounded-full"></i>
                 <div class="flex flex-col">
-                  <div class="font-bold text-xs">{location.name}</div>
-                  <div class="text-star-grey text-[10px]">
-                    {location.address}
-                  </div>
+                  <div class="font-medium text-[13px]">{location.name}</div>
+                  <div class="text-star-grey text-xs">{location.address}</div>
                 </div>
               </div>
               <hr class="w-[-webkit-fill-available]" />

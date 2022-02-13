@@ -7,8 +7,18 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiYWxsZW5zdW4xMTMiLCJhIjoiY2t5engyaHV4MG43ZjJvcm12cGhjZ3NzYiJ9.yddnnKrY3jf2ua-MbrRNow";
 const url = "";
 
-const Map = ({ pickup, setPickup, dropoff, setDropoff }) => {
+const Map = ({
+  pickup,
+  setPickup,
+  dropoff,
+  setDropoff,
+  distance,
+  setDistance,
+  result = "",
+}) => {
   useEffect(() => {
+    console.log(result);
+
     if (pickup && dropoff) {
       url = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickup[0]},${pickup[1]};${dropoff[0]},${dropoff[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`;
     }
@@ -34,7 +44,7 @@ const Map = ({ pickup, setPickup, dropoff, setDropoff }) => {
       const data = await json.routes[0];
       const route = data.geometry.coordinates;
       const duration = data.duration;
-      const distance = data.distance;
+      setDistance(data.distance);
 
       const instruction = document.getElementById("instruction");
       instruction.innerHTML = `
@@ -122,7 +132,6 @@ const Map = ({ pickup, setPickup, dropoff, setDropoff }) => {
     };
     const popup = new mapboxgl.Popup({
       offset: popupOffset,
-      className: styles.popup,
       closeButton: false,
     }).setHTML(id === 1 ? "From" : "To");
 
@@ -159,7 +168,16 @@ const Map = ({ pickup, setPickup, dropoff, setDropoff }) => {
 
   return (
     <>
-      <div className={styles.map} id="map">
+      <style jsx global>{`
+        .mapboxgl-popup-tip {
+          border: 7px solid transparent;
+        }
+        .mapboxgl-popup-content {
+          box-shadow: 1px 4px 6px rgb(0 0 0 / 30%);
+          padding: 6px 10px;
+        }
+      `}</style>
+      <div className={result === "" ? styles.map : styles.bigMap} id="map">
         Map
       </div>
       <div id="instruction" className={styles.instruction}></div>

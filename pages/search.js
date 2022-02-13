@@ -74,8 +74,8 @@ const search = ({ locations }) => {
           <Link href={{ pathname: "/stored_loc" }}>
             <div class="flex items-center ">
               <i class="fas fa-star fill-current text-white bg-star-grey text-xs p-star ml-2 rounded-full"></i>
-              <div class="text-Poppins pl-[6px] font-bold text-xs">
-                Stored Places
+              <div class="text-Poppins pl-[6px] font-medium text-xs">
+                Saved Places
               </div>
               <i class="fa-solid fa-chevron-right absolute  right-4 fill-current text-gray-400 text-xs"></i>
             </div>
