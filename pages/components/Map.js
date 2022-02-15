@@ -42,9 +42,15 @@ const Map = ({
         res.json()
       );
       const data = await json.routes[0];
+      const steps = data.legs[0].steps;
       const route = data.geometry.coordinates;
       const duration = data.duration;
       setDistance(data.distance);
+
+      let tripInstructions = "";
+      for (const step of steps) {
+        tripInstructions += `<li>${step.maneuver.instruction}</li><hr>`;
+      }
 
       const instruction = document.getElementById("instruction");
       instruction.innerHTML = `
@@ -58,7 +64,7 @@ const Map = ({
         distance > 1000
           ? Math.floor(distance / 1000) + " km"
           : Math.floor(distance) + " m"
-      } </div>`;
+      } </div><hr><hr><ul>${tripInstructions}</ul>`;
 
       const geojson = {
         type: "Feature",
@@ -132,7 +138,6 @@ const Map = ({
     };
     const popup = new mapboxgl.Popup({
       offset: popupOffset,
-      closeButton: false,
     }).setHTML(id === 1 ? "From" : "To");
 
     if (id === 1) {
