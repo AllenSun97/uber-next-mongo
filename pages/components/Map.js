@@ -14,6 +14,8 @@ const Map = ({
   setDropoff,
   setDistance,
   result = "",
+  from,
+  to,
 }) => {
   useEffect(() => {
     console.log(result);
@@ -107,9 +109,9 @@ const Map = ({
               ["linear"],
               ["line-progress"],
               0,
-              "#2b2b2b",
+              "black",
               1,
-              "#4fffd9",
+              "#47daff",
             ],
           },
         });
@@ -140,7 +142,7 @@ const Map = ({
         },
         paint: {
           "circle-radius": 3,
-          "circle-color": "#2b2b2b",
+          "circle-color": "black",
         },
       });
       map.addLayer({
@@ -164,7 +166,7 @@ const Map = ({
         },
         paint: {
           "circle-radius": 4,
-          "circle-color": "#4fffd9",
+          "circle-color": "#4ffffc",
         },
       });
     });
@@ -172,16 +174,20 @@ const Map = ({
 
   const addToMap = (map, coordinate, id) => {
     const popupOffset = {
-      bottom: [0, -25],
+      bottom: [20, -30],
     };
     const popup = new mapboxgl.Popup({
       offset: popupOffset,
-    }).setHTML(id === 1 ? "From" : "To");
+    }).setHTML(
+      id === 1
+        ? `<text class="text-sm">From</text> ${from}`
+        : `<text class="text-sm">To</text> ${to}`
+    );
 
     if (id === 1) {
       const marker1 = new mapboxgl.Marker({
         draggable: true,
-        color: "#2b2b2b",
+        color: "black",
       })
         .setLngLat(coordinate)
         .addTo(map)
@@ -197,7 +203,7 @@ const Map = ({
     if (id === 2) {
       const marker2 = new mapboxgl.Marker({
         draggable: true,
-        color: "#4bf2ce",
+        color: "#4ddaf0",
       })
         .setLngLat(coordinate)
         .addTo(map)
@@ -215,9 +221,7 @@ const Map = ({
     <>
       <style jsx global>{`
         .mapboxgl-popup-tip {
-          border: 7px solid transparent;
-          bottom: -6px;
-          position: relative;
+          display: none;
         }
         .mapboxgl-popup-content {
           box-shadow: 1px 4px 6px rgb(0 0 0 / 30%);

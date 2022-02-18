@@ -47,9 +47,8 @@
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.6);
 }
-
 .uber {
-  height: 50px;
+  height: 45px;
 }
 .uber1 {
   height: 20px;
@@ -57,15 +56,15 @@
   align-self: flex-start;
 }
 .user {
-  height: 50px;
+  height: 45px;
   border-radius: 50%;
-  border: solid 3px white;
+  border: solid 1px white;
   justify-content: flex-end;
+  box-shadow: rgba(110, 110, 110, 0.3) 3px 3px 2px;
 }
 .user:hover {
   cursor: pointer;
 }
-
 .userName {
   position: absolute;
   top: 55%;
@@ -75,18 +74,42 @@
 .btn {
   background-color: #f2f3f7;
   height: 110px;
-  width: 115px;
+  width: 25%;
+  min-width: 95px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   transition: 0.4s;
+  box-shadow: rgba(110, 110, 110, 0.3) 3px 3px 2px;
 }
-.btn:hover {
+.btn:hover,
+.userBtn:hover {
   transform: scale(1.08);
+  box-shadow: rgba(110, 110, 110, 0.2) 5px 5px 5px;
 }
-
+.userBtn {
+  background-color: #f2f3f7;
+  height: 100%;
+  width: 25%;
+  min-width: 95px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 8px;
+  box-shadow: rgba(110, 110, 110, 0.3) 3px 3px 3px;
+}
+.userIcon {
+  width: fit-content !important;
+  height: 18px !important;
+}
+.userBack {
+  margin: 10px;
+}
 .uberIcon {
   height: 80px;
 }
@@ -101,8 +124,9 @@
 }
 /* ///////////// */
 .back {
-  width: 30px;
-  padding: 3px;
+  width: 32px;
+  margin-inline: 8px;
+  padding-top: 8px;
 }
 .back1 {
   background: white;
@@ -118,23 +142,35 @@
   cursor: pointer;
 }
 .plus {
-  color: #e8e9eb;
-  font-size: 30px;
+  color: white;
+  background: #ececec;
+  padding: 6px;
+  height: 28px;
+  width: 28px !important;
   margin: 5px;
-  margin-top: 18px;
+  margin-right: 10px;
+  margin-top: 13px;
+  border-radius: 50%;
 }
 .star {
-  color: rgb(255, 255, 255);
-  background: rgb(209, 209, 209);
-  font-size: 15px;
-  padding: 4px;
+  color: rgb(255, 255, 255) !important;
+  background: rgb(193, 193, 197);
+  padding: 6px;
+  height: 26px;
+  width: 25px !important;
+  margin-right: 5px;
   border-radius: 50%;
+}
+.storedLocT {
+  padding-left: 4px;
+  font-weight: 500;
+  font-size: smaller;
 }
 .storedLocE {
   font-size: small;
-  color: #f2f3f7;
+  color: #bfc0c2;
   position: absolute;
-  right: 17px;
+  right: 3%;
 }
 .FromTo {
   background-size: contain;
@@ -143,17 +179,55 @@
   margin-left: 10px;
   margin-right: 5px;
 }
-
 .InputBox {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   width: 90%;
 }
-
+.circle {
+  width: 5pt;
+  height: 6px;
+  position: relative;
+  left: 11.5px;
+}
+.string {
+  height: 25px;
+  position: relative;
+  left: 5px;
+}
+.cube {
+  width: 8px;
+  height: 8px;
+  position: relative;
+  left: 11px;
+}
+.Input {
+  font-size: 12px;
+  background: #f2f3f7;
+  margin-bottom: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 0.125rem;
+  padding: 0.25rem;
+  margin-top: 5px;
+}
 .Input:focus {
   background: #e2e3e6;
   border: none;
+}
+.saved_place {
+  display: flex;
+  padding: 10px 6px;
+  margin-left: 6px;
+  align-items: center;
+}
+.saved_place:hover {
+  cursor: pointer;
+}
+.saved_placeIn {
+  display: flex;
+  align-items: center;
 }
 .Signin {
   width: -webkit-fill-available;
@@ -204,7 +278,6 @@
   margin: 5px 0px;
   overflow: scroll;
 }
-
 .choosecar {
   height: 70px;
   padding: 0px 10px;
@@ -226,7 +299,6 @@
   transform: scale(1.1);
   transform: translate(2px, -2px);
 }
-
 .choosecartxt {
   padding-top: 18px;
   display: flex;
@@ -246,11 +318,9 @@
   padding: 0;
   background: #fc4563;
 }
-
 .instruction {
   text-align: left;
   position: absolute;
-
   margin: 12px;
   width: fit-content;
   top: 4px;

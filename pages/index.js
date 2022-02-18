@@ -1,31 +1,12 @@
-import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
-
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Map from "./components/Map";
 
+import { useAuth } from "./contexts/AuthContext";
 import clientPromise from "../lib/mongodb";
 
 export default function Home({ isConnected }) {
-  const [user, setUser] = useState(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    return onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser({
-          name: user.displayName,
-          photoUrl: user.photoURL,
-        });
-      } else {
-        setUser(null);
-        router.push("/login");
-      }
-    });
-  }, []);
+  const { user } = useAuth();
 
   return (
     <div>
@@ -38,14 +19,12 @@ export default function Home({ isConnected }) {
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/2560px-Uber_logo_2018.svg.png"
                 className={styles.uber}
               />
-              <div>
-                <img
-                  src={user && user.photoUrl}
-                  className={styles.user}
-                  onClick={() => signOut(auth)}
-                />
-                <div className={styles.userName}>{user && user.name}</div>
-              </div>
+              <Link href="/user">
+                <div>
+                  <img src={user && user.photoUrl} className={styles.user} />
+                  <div className={styles.userName}>{user && user.name}</div>
+                </div>
+              </Link>
             </div>
             <div className={styles.box}>
               <Link href="/search">

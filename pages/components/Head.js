@@ -22,9 +22,9 @@ const Header = () => {
           href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
           type="text/css"
         />
-        {/* Import Turf and Polyline  */}
+        {/* Import Turf and Polyline 
         <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js"></script> */}
       </Head>
       <style jsx global>{`
         .mapboxgl-ctrl-top-right {

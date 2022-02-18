@@ -73,6 +73,8 @@ const confirm = () => {
         setDistance={setDistance}
         distance={distance}
         result={result}
+        from={pickup}
+        to={dropoff}
       />
       <Rides
         distance={distance}
@@ -85,7 +87,7 @@ const confirm = () => {
         class="w-5/6 bg-black text-slate-100  py-1 px-[2px] self-center my-2"
         onClick={() => addTrip(pickup, dropoff, car, price)}
       >
-        Confirm {car}
+        {result ? "ENJOY YOUR TRIP" : `Confirm ${car}`}
       </button>
     </div>
   );
