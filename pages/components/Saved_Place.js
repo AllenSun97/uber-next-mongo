@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import styles from "../../styles/Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Saved_Place = ({ locations, slice = 10, func = null }) => {
   const [place, setPlace] = useState("");
@@ -17,14 +20,15 @@ const Saved_Place = ({ locations, slice = 10, func = null }) => {
           >
             <a>
               <div
-                class="flex items-center p-[6px] pl-2 hover:cursor-pointer"
+                class="flex items-center p-[6px] pl-3 hover:cursor-pointer"
                 key={location._id}
                 onClick={() => {
                   setPlace(location.address);
                 }}
               >
-                <i class="fas fa-star fill-current text-white bg-star-grey text-xs p-star mx-2 rounded-full"></i>
-                <div class="flex flex-col">
+                <FontAwesomeIcon icon={faStar} className={styles.star} />
+
+                <div class="flex flex-col pl-1">
                   <div class="font-medium text-[13px]">{location.name}</div>
                   <div class="text-star-grey text-xs">{location.address}</div>
                 </div>
